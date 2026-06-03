@@ -1,0 +1,158 @@
+// Churnfix Prisma Schema
+// SQLite for dev, switch datasource to PostgreSQL for production
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Better Auth Models ───────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions      Session[]
+  accounts      Account[]
+
+  // Churnfix relations
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// ─── Churnfix Business Models ─────────────────────────────────────────
+
+model Organization {
+  id        String   @id @default(cuid())
+  name      String
+  plan      String   @default("growth") // "free" | "growth" | "scale"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users        User[]
+  events       PaymentEvent[]
+  integrations IntegrationConfig[]
+  alertConfig  AlertConfig?
+  emailTemplate EmailTemplate?
+}
+
+model PaymentEvent {
+  id             String   @id @default(cuid())
+  externalId     String?  // Stripe event ID, etc.
+  timestamp      DateTime @default(now())
+  customerName   String
+  customerEmail  String
+  processor      String   // "stripe" | "polar" | "lemonsqueezy" | "paddle"
+  amount         Float
+  currency       String   @default("usd")
+  status         String   // "failed" | "retrying" | "recovered"
+  reason         String?  // "insufficient_funds" | "card_expired" | "generic_decline"
+  invoiceId      String?
+  attempts       Int      @default(1)
+  stripeCustomerId String?
+  rawPayload     String?  // JSON string of the original webhook payload
+  
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([processor])
+  @@index([customerEmail])
+}
+
+model IntegrationConfig {
+  id             String  @id @default(cuid())
+  processor      String  // "stripe" | "polar" | "lemonsqueezy" | "paddle"
+  connected      Boolean @default(false)
+  apiKey         String? // Encrypted API key
+  webhookSecret  String? // Webhook signing secret
+  
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([organizationId, processor])
+}
+
+model AlertConfig {
+  id              String  @id @default(cuid())
+  slackEnabled    Boolean @default(false)
+  slackWebhook    String?
+  discordEnabled  Boolean @default(false)
+  discordWebhook  String?
+  emailEnabled    Boolean @default(true)
+  emailAddress    String?
+
+  organizationId String   @unique
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EmailTemplate {
+  id      String @id @default(cuid())
+  subject String @default("Action Required: Failed payment for your subscription")
+  body    String @default("Hi {{customer_name}},\n\nWe were unable to process your recent monthly payment of {{amount}} on {{billing_platform}}.\n\nTo keep your account active and avoid any interruptions, please update your billing details here:\n{{recovery_link}}\n\nThank you,\nThe Billing Team")
+
+  organizationId String       @unique
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
