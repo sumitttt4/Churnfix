@@ -62,7 +62,7 @@ export default function PricingView({ currentTier, onSelectTier, addToast }) {
         { text: "Team Members", icon: Users },
         { text: "Advanced Reporting", icon: TrendingUp },
         { text: "Recovery Insights", icon: Sparkles },
-        { text: "Export Reports", icon: Share2 },
+        { text: "Custom Dunning Sequences", icon: Share2 },
         { text: "API Access", icon: Terminal },
         { text: "Recovery Automation", icon: Sparkles },
         { text: "Priority Support", icon: Check }

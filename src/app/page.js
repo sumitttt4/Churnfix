@@ -339,16 +339,7 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Webhook simulator trigger button */}
-        <div className="mt-4 md:mt-6">
-          <button
-            className="w-full justify-center border border-primary text-primary hover:bg-primary-light text-xs font-bold py-2.5 rounded-sharp flex items-center gap-2 cursor-pointer transition-colors"
-            onClick={() => setIsSimulatorOpen(true)}
-            id="trigger-simulator"
-          >
-            <Terminal size={14} /> Webhook Simulator
-          </button>
-        </div>
+        {/* Webhook simulator trigger removed for pre-launch */}
 
         {/* Sidebar Footer */}
         <div className="mt-auto pt-6 border-t border-border-clean hidden md:flex flex-col gap-4">
@@ -406,14 +397,7 @@ export default function Home() {
           </div>
           
           <div>
-            {activeTab === "dashboard" && (
-              <button 
-                className="btn bg-primary hover:bg-primary-hover text-neutral-surface text-xs font-bold py-2.5 px-4 rounded-sharp flex items-center gap-1.5 cursor-pointer transition-colors"
-                onClick={() => setIsSimulatorOpen(true)}
-              >
-                <Terminal size={14} /> Simulate Event
-              </button>
-            )}
+            {/* Simulate event button removed for pre-launch */}
           </div>
         </div>
 

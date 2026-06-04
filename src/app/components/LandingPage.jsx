@@ -339,10 +339,10 @@ export default function LandingPage({
   // Calculate stats for the hero preview
   const failedEvents = events.filter((e) => e.status === "failed" || e.status === "retrying");
   const recoveredEvents = events.filter((e) => e.status === "recovered");
-  const atRiskAmount = failedEvents.reduce((sum, e) => sum + e.amount, 0);
-  const recoveredAmount = recoveredEvents.reduce((sum, e) => sum + e.amount, 0);
-  const totalClosed = failedEvents.length + recoveredEvents.length;
-  const recoveryRate = totalClosed > 0 ? (recoveredEvents.length / totalClosed) * 100 : 32;
+  const atRiskAmount = 14250;
+  const recoveredAmount = 9840;
+  const recoveryRate = 69.1;
+  const failedCustomersCount = 124;
 
   // Mini Chart data coordinates
   const points = [
@@ -414,7 +414,7 @@ export default function LandingPage({
           <motion.div {...fadeUp(0.1)}>
             <div className="inline-flex items-center gap-2 border border-[#E5E7EB] bg-[#F9FAFB] text-[#64748B] px-4 py-2 rounded-full text-[12px] font-semibold tracking-wide mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
-              Recover revenue. Reduce churn.
+              ✨ Now with Lemon Squeezy support
             </div>
           </motion.div>
 
@@ -439,9 +439,6 @@ export default function LandingPage({
           <motion.div className="flex flex-wrap items-center justify-center gap-3 mb-6" {...fadeUp(0.34)}>
             <Link href="/signup" className="bg-[#0F172A] hover:bg-[#1E293B] text-white text-[14px] px-8 py-3.5 font-bold rounded-full transition-all duration-300 cursor-pointer flex items-center gap-2 no-underline shadow-[0_1px_3px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
               Start Free Trial <ArrowRight size={15} />
-            </Link>
-            <Link href="/login" className="bg-white border border-[#E5E7EB] hover:border-[#CBD5E1] text-[#0F172A] text-[14px] px-8 py-3.5 font-bold rounded-full transition-all duration-300 cursor-pointer flex items-center gap-2 no-underline shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:-translate-y-0.5">
-              View Demo
             </Link>
           </motion.div>
 
@@ -488,7 +485,7 @@ export default function LandingPage({
                   <DashKPI label="At-Risk Revenue" value={atRiskAmount} prefix="$" color="#EF4444" icon={<AlertCircle size={14} />} />
                   <DashKPI label="Recovered Revenue" value={recoveredAmount} prefix="$" color="#10B981" icon={<CheckCircle2 size={14} />} />
                   <DashKPI label="Recovery Rate" value={recoveryRate} suffix="%" color="#10B981" icon={<TrendingUp size={14} />} />
-                  <DashKPI label="Failed Customers" value={failedEvents.length} color="#F59E0B" icon={<Users size={14} />} />
+                  <DashKPI label="Failed Customers" value={failedCustomersCount} color="#F59E0B" icon={<Users size={14} />} />
                 </div>
 
                 {/* Chart + Feed Grid */}
@@ -641,9 +638,9 @@ export default function LandingPage({
                 <div className="w-8 h-8 rounded-[6px] bg-[#0F9D76]/10 text-[#0F9D76] flex items-center justify-center">
                   <Terminal size={16} />
                 </div>
-                <h3 className="text-xl font-bold text-[#0F172A] font-display">Developer-level monitoring.</h3>
+                <h3 className="text-xl font-bold text-[#0F172A] font-display">Full Transparency.</h3>
                 <p className="text-[#475569] text-sm leading-relaxed">
-                  Deep payload inspection. Monitor every event, webhook response, and payment API headers. Filter logs by processor and customize to fit your stack.
+                  See exactly why a payment failed without digging through multiple payment provider dashboards. Deep payload inspection made easy.
                 </p>
                 <button 
                   onClick={() => onEnterApp("dashboard")}
@@ -774,7 +771,7 @@ export default function LandingPage({
                     <span className="font-bold text-sm text-white">Monitor failed payments</span>
                   </div>
                   <p className="text-slate-400 text-xs leading-relaxed mt-1">
-                    Our partner captures payment failed events and triggers notifications.
+                    Churnfix instantly captures payment failed events and triggers notifications.
                   </p>
                 </div>
                 {/* Step 3 */}
@@ -899,7 +896,7 @@ export default function LandingPage({
                 </p>
               </div>
               <div className="bg-slate-100 text-[9px] font-mono font-bold text-[#475569] px-2 py-0.5 rounded-full mt-4 w-fit">
-                cash_payment_error
+                Payment Failed
               </div>
             </div>
 
@@ -919,7 +916,7 @@ export default function LandingPage({
                       <div className="flex flex-col gap-1.5">
                         <div className="flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
                           <Mail size={10} className="text-[#00E87A]" />
-                          <span className="text-[8px] font-bold text-slate-700">dunning_email</span>
+                          <span className="text-[8px] font-bold text-slate-700">Recovery Email</span>
                         </div>
                         <div className="flex flex-col gap-1 mt-0.5">
                           <div className="w-full h-1.5 bg-slate-100 rounded-full" />
@@ -997,7 +994,7 @@ export default function LandingPage({
                 </p>
               </div>
               <div className="bg-[#0F9D76]/10 border border-[#0F9D76]/20 text-[9px] font-mono font-bold text-[#0F9D76] px-2 py-0.5 rounded-full mt-4 w-fit">
-                payment_status_succeeded
+                Payment Recovered
               </div>
             </div>
           </div>
@@ -1089,7 +1086,7 @@ export default function LandingPage({
                   { text: "Team Members", icon: Users },
                   { text: "Advanced Reporting", icon: TrendingUp },
                   { text: "Recovery Insights", icon: Sparkles },
-                  { text: "Export Reports", icon: Share2 },
+                  { text: "Custom Dunning Sequences", icon: Share2 },
                   { text: "API Access", icon: Terminal },
                   { text: "Recovery Automation", icon: Sparkles },
                   { text: "Priority Support", icon: Check }
@@ -1208,48 +1205,27 @@ export default function LandingPage({
                 <p className="text-[13px] text-[#64748B] leading-relaxed max-w-[240px]">
                   Clean, calm billing reliability for founders. Recover revenue on autopilot across all your payment providers.
                 </p>
-                <div className="flex items-center gap-4 mt-2">
-                  <a href="#" className="text-[#94A3B8] hover:text-[#0F172A] transition-colors" aria-label="Twitter">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-[#94A3B8] hover:text-[#0F172A] transition-colors" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
-                    </svg>
-                  </a>
-                </div>
               </div>
               
               <div className="flex flex-col gap-4">
                 <h4 className="font-bold text-[13px] text-[#0F172A]">Product</h4>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Features</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Integrations</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Pricing</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Changelog</a>
+                <a href="#features" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Features</a>
+                <a href="#pricing" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Pricing</a>
               </div>
 
               <div className="flex flex-col gap-4">
-                <h4 className="font-bold text-[13px] text-[#0F172A]">Resources</h4>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Documentation</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">API Reference</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Blog</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Guides</a>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <h4 className="font-bold text-[13px] text-[#0F172A]">Company</h4>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">About Us</a>
+                <h4 className="font-bold text-[13px] text-[#0F172A]">Legal</h4>
                 <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Privacy Policy</a>
                 <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Terms of Service</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Security</a>
               </div>
+              
+              {/* Empty column for layout balance */}
+              <div className="hidden md:block"></div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between border-t border-[#E5E7EB] pt-8 gap-4">
               <p className="text-[12px] text-[#64748B]">
-                © {new Date().getFullYear()} Churnfix Inc. All rights reserved.
+                © {new Date().getFullYear()} Churnfix. All rights reserved.
               </p>
               {/* 50% opacity Churnfix wordmark */}
               <span className="font-display text-xl font-black tracking-[-0.03em] text-[#0F172A] opacity-20 select-none">
