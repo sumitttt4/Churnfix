@@ -414,7 +414,7 @@ export default function LandingPage({
           <motion.div {...fadeUp(0.1)}>
             <div className="inline-flex items-center gap-2 border border-[#E5E7EB] bg-[#F9FAFB] text-[#64748B] px-4 py-2 rounded-full text-[12px] font-semibold tracking-wide mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
-              ✨ Now with Lemon Squeezy support
+              Now with Lemon Squeezy support
             </div>
           </motion.div>
 
@@ -578,7 +578,7 @@ export default function LandingPage({
 
           <div className="flex flex-col gap-10">
             {/* Card 1: Webhook Alerts */}
-            <div className="bg-white border border-slate-200/60 rounded-[16px] p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center hover:border-slate-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.02)] transition-all">
+            <div className="bg-[#FCFDFE] border border-slate-200/80 rounded-[24px] p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-slate-300 transition-all duration-300">
               <div className="lg:col-span-5 flex flex-col gap-4">
                 <div className="w-8 h-8 rounded-[6px] bg-[#0F9D76]/10 text-[#0F9D76] flex items-center justify-center">
                   <Bell size={16} />
@@ -595,34 +595,34 @@ export default function LandingPage({
               </div>
 
               {/* Slack Mockup */}
-              <div className="lg:col-span-7 bg-[#0A0C0F] text-slate-100 rounded-[8px] p-6 font-sans text-xs flex flex-col gap-3 shadow-none border border-white/[0.04]">
-                <div className="flex items-center justify-between border-b border-white/[0.04] pb-3 text-slate-400">
+              <div className="lg:col-span-7 bg-white text-slate-800 rounded-[8px] p-6 font-sans text-xs flex flex-col gap-3 shadow-[inset_0_0_0_1px_rgba(226,232,240,1),0_2px_10px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-3 text-slate-400">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#E01E5A]" />
-                    <span className="font-bold text-white/80">#billing-alerts</span>
+                    <span className="font-bold text-slate-700">#billing-alerts</span>
                   </div>
-                  <span className="text-[10px] text-white/40">Slack App</span>
+                  <span className="text-[10px] text-slate-400">Slack App</span>
                 </div>
                 <div className="flex gap-3">
-                  <div className="w-8 h-8 bg-[#0F9D76] text-[#0A0C0F] rounded-[4px] flex items-center justify-center font-bold text-[10px] flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#0F9D76] text-white rounded-[4px] flex items-center justify-center font-bold text-[10px] flex-shrink-0 shadow-sm">
                     CF
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-slate-200">Churnfix</span>
-                      <span className="bg-white/10 text-white/60 text-[9px] px-1.5 py-0.5 rounded-[4px]">APP</span>
+                      <span className="font-bold text-slate-800">Churnfix</span>
+                      <span className="bg-slate-100 text-slate-500 text-[9px] px-1.5 py-0.5 rounded-[4px]">APP</span>
                       <span className="text-[10px] text-slate-400">10:42 AM</span>
                     </div>
-                    <div className="border-l-[3px] border-red-500 pl-3 py-0.5 flex flex-col gap-1.5 bg-red-500/5 pr-4 rounded-r-[4px]">
-                      <div className="font-bold text-slate-200">⚠️ Failed Stripe charge</div>
-                      <p className="text-slate-300 leading-relaxed">
+                    <div className="border-l-[3px] border-red-500 pl-3 py-0.5 flex flex-col gap-1.5 bg-red-50 pr-4 rounded-r-[4px]">
+                      <div className="font-bold text-slate-800">Failed Stripe charge</div>
+                      <p className="text-slate-600 leading-relaxed">
                         Amount: <strong>$19.00</strong>. Customer: <strong>sarah@home.com</strong>
                         <br />
                         Reason: Insufficient Funds
                       </p>
                       <button 
                         onClick={() => onEnterApp("dashboard")}
-                        className="w-fit bg-[#0F9D76] hover:bg-[#0C8564] text-white text-[10px] font-extrabold px-3 py-1.5 rounded-[4px] cursor-pointer border-none transition-colors mt-1"
+                        className="w-fit bg-white border border-slate-200 shadow-sm hover:border-slate-300 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-[4px] cursor-pointer transition-colors mt-1"
                       >
                         Inspect Recovery Plan
                       </button>
@@ -633,7 +633,7 @@ export default function LandingPage({
             </div>
 
             {/* Card 2: Developer level monitoring */}
-            <div className="bg-white border border-slate-200/60 rounded-[16px] p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center hover:border-slate-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.02)] transition-all">
+            <div className="bg-[#FCFDFE] border border-slate-200/80 rounded-[24px] p-8 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-slate-300 transition-all duration-300">
               <div className="lg:col-span-5 flex flex-col gap-4">
                 <div className="w-8 h-8 rounded-[6px] bg-[#0F9D76]/10 text-[#0F9D76] flex items-center justify-center">
                   <Terminal size={16} />
@@ -644,37 +644,37 @@ export default function LandingPage({
                 </p>
                 <button 
                   onClick={() => onEnterApp("dashboard")}
-                  className="w-fit border border-slate-200 hover:border-slate-800 text-[#0F172A] text-xs font-bold py-2.5 px-4 rounded-[6px] cursor-pointer bg-white transition-all shadow-sm"
+                  className="w-fit border border-slate-200 hover:border-slate-300 shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-[#0F172A] text-xs font-bold py-2.5 px-4 rounded-[6px] cursor-pointer bg-white transition-all"
                 >
                   View live feed →
                 </button>
               </div>
 
               {/* JSON Mockup */}
-              <div className="lg:col-span-7 bg-[#0A0C0F] rounded-[8px] p-6 font-mono text-[11px] leading-relaxed overflow-hidden text-slate-300 select-all border border-white/[0.04] h-[220px] relative">
-                <div className="flex items-center justify-between text-slate-500 border-b border-white/[0.04] pb-2 mb-4">
-                  <span className="text-[10px] text-white/30">Webhook payload</span>
-                  <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded-[4px]">200 OK</span>
+              <div className="lg:col-span-7 bg-white rounded-[8px] p-6 font-mono text-[11px] leading-relaxed overflow-hidden text-slate-600 select-all border border-slate-200 shadow-[inset_0_0_0_1px_rgba(226,232,240,0.5),0_2px_10px_rgba(0,0,0,0.02)] h-[220px] relative">
+                <div className="flex items-center justify-between text-slate-400 border-b border-slate-100 pb-2 mb-4">
+                  <span className="text-[10px] text-slate-400">Webhook payload</span>
+                  <span className="text-[10px] text-[#0F9D76] bg-[#0F9D76]/10 px-1.5 py-0.5 rounded-[4px] font-semibold">200 OK</span>
                 </div>
                 <div className="scrolling-code flex flex-col gap-1">
-                  <span className="text-yellow-500">{"{"}</span>
+                  <span className="text-slate-500">{"{"}</span>
                   <div className="pl-4">
-                    <span className="text-teal-400">"event"</span>: <span className="text-emerald-400">"invoice.payment_failed"</span>,<br />
-                    <span className="text-teal-400">"data"</span>: <span className="text-yellow-500">{"{"}</span>
+                    <span className="text-slate-700 font-semibold">"event"</span>: <span className="text-[#0F9D76]">"invoice.payment_failed"</span>,<br />
+                    <span className="text-slate-700 font-semibold">"data"</span>: <span className="text-slate-500">{"{"}</span>
                     <div className="pl-4">
-                      <span className="text-teal-400">"object"</span>: <span className="text-yellow-500">{"{"}</span>
+                      <span className="text-slate-700 font-semibold">"object"</span>: <span className="text-slate-500">{"{"}</span>
                       <div className="pl-4">
-                        <span className="text-teal-400">"id"</span>: <span className="text-amber-400">"in_1Ni..."</span>,<br />
-                        <span className="text-teal-400">"customer"</span>: <span className="text-amber-400">"cus_O7l..."</span>,<br />
-                        <span className="text-teal-400">"amount_due"</span>: <span className="text-amber-400">1900</span>,<br />
-                        <span className="text-teal-400">"currency"</span>: <span className="text-amber-400">"usd"</span>,<br />
-                        <span className="text-teal-400">"email_attempt"</span>: <span className="text-emerald-400">1713011200</span>
+                        <span className="text-slate-700 font-semibold">"id"</span>: <span className="text-amber-600">"in_1Ni..."</span>,<br />
+                        <span className="text-slate-700 font-semibold">"customer"</span>: <span className="text-amber-600">"cus_O7l..."</span>,<br />
+                        <span className="text-slate-700 font-semibold">"amount_due"</span>: <span className="text-indigo-600">1900</span>,<br />
+                        <span className="text-slate-700 font-semibold">"currency"</span>: <span className="text-amber-600">"usd"</span>,<br />
+                        <span className="text-slate-700 font-semibold">"email_attempt"</span>: <span className="text-indigo-600">1713011200</span>
                       </div>
-                      <span className="text-yellow-500">{"}"}</span>
+                      <span className="text-slate-500">{"}"}</span>
                     </div>
-                    <span className="text-yellow-500">{"}"}</span>
+                    <span className="text-slate-500">{"}"}</span>
                   </div>
-                  <span className="text-yellow-500">{"}"}</span>
+                  <span className="text-slate-500">{"}"}</span>
                 </div>
               </div>
             </div>
@@ -793,48 +793,54 @@ export default function LandingPage({
 
 
         {/* 7. Why Founders Switch: The Recovery Loop (Light Mode Horizontal Flow) */}
-        <section className="max-w-7xl mx-auto w-full px-6 py-24 border-b border-slate-200/60 relative">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[#0F9D76] text-[11px] font-bold uppercase tracking-widest block mb-3">
-              HOW IT WORKS
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] font-display mb-4">
-              Why founders switch: The Recovery Loop
-            </h2>
-            <p className="text-[#475569] text-sm leading-relaxed">
-              What happens from the millisecond a payment declines until the recovered revenue is back in your account.
-            </p>
+        <section className="w-full py-28 border-b border-slate-200/60 relative overflow-hidden">
+          {/* Subtle colorful background gradient blobs matching card flow */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.12] z-0 flex items-center justify-center">
+            <div className="absolute left-[-10%] w-[40%] h-[600px] bg-red-400 rounded-full mix-blend-multiply filter blur-[120px] animate-pulse" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute left-[20%] w-[30%] h-[600px] bg-amber-400 rounded-full mix-blend-multiply filter blur-[120px] animate-pulse" style={{ animationDuration: '10s' }}></div>
+            <div className="absolute right-[20%] w-[30%] h-[600px] bg-blue-400 rounded-full mix-blend-multiply filter blur-[120px] animate-pulse" style={{ animationDuration: '9s' }}></div>
+            <div className="absolute right-[-10%] w-[40%] h-[600px] bg-emerald-400 rounded-full mix-blend-multiply filter blur-[120px] animate-pulse" style={{ animationDuration: '11s' }}></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">
+              <span className="text-[#10B981] border border-[#10B981]/30 bg-[#10B981]/5 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
+                HOW IT WORKS
+              </span>
+              <h2 className="text-4xl md:text-[52px] font-bold text-[#0F172A] font-display mb-6 tracking-tight leading-tight whitespace-nowrap">
+                Why founders switch: <span className="text-[#10B981]">The Recovery Loop</span>
+              </h2>
+              <p className="text-[#475569] text-base md:text-lg leading-relaxed max-w-2xl text-center">
+                What happens from the millisecond a payment declines until the recovered revenue is back in your account.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {/* Step 1 */}
             <div 
-              className="bg-white border border-slate-200/60 p-5 rounded-[16px] flex flex-col justify-between hover:border-[#00E87A]/40 hover:shadow-[0_12px_30px_rgba(0,232,122,0.06)] hover:translate-y-[-2px] transition-all duration-300"
-              style={{
-                background: "radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.08), transparent 70%), #FFFFFF",
-              }}
+              className="bg-red-50/40 p-6 rounded-[24px] flex flex-col justify-between border border-red-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-red-200 transition-all duration-300"
             >
               <div>
                 {/* Visual section */}
-                <div className="w-full h-40 rounded-xl bg-slate-50/50 border border-slate-100/80 flex items-center justify-center relative overflow-hidden mb-4">
+                <div className="w-full h-48 rounded-xl bg-white/50 border border-red-100 flex items-center justify-center relative overflow-hidden mb-5">
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Webhook Console mockup */}
-                    <div className="w-[85%] bg-[#0A0C10] border border-white/[0.06] rounded-lg p-3 text-[10px] font-mono text-slate-300 shadow-md">
-                      <div className="flex items-center justify-between border-b border-white/5 pb-1.5 mb-2">
-                        <span className="text-slate-500 text-[8px] tracking-wider uppercase">Stripe Webhook</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                    <div className="w-[90%] bg-white border border-red-100 shadow-sm rounded-lg p-4 text-xs font-mono text-slate-600">
+                      <div className="flex items-center justify-between border-b border-red-50 pb-2 mb-3">
+                        <span className="text-slate-500 text-[10px] tracking-wider uppercase font-bold">Stripe Webhook</span>
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
                       </div>
-                      <div className="flex flex-col gap-1 text-left text-[9px]">
-                        <div><span className="text-[#00E87A]">event:</span> "invoice.payment_failed"</div>
-                        <div><span className="text-[#00E87A]">status:</span> <span className="text-red-400">"failed"</span></div>
-                        <div><span className="text-[#00E87A]">customer:</span> "sarah@home.com"</div>
+                      <div className="flex flex-col gap-1.5 text-left text-[11px]">
+                        <div><span className="text-slate-800 font-semibold">event:</span> <span className="text-red-500">"invoice.payment_failed"</span></div>
+                        <div><span className="text-slate-800 font-semibold">status:</span> <span className="text-red-500 font-medium">"failed"</span></div>
+                        <div><span className="text-slate-800 font-semibold">customer:</span> <span className="text-amber-600 font-medium">"sarah@home.com"</span></div>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-2 text-[#0F9D76] text-xs font-bold font-mono tracking-widest mb-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#0F9D76]/10 flex items-center justify-center text-[10px]">01</span>
+                <div className="flex items-center gap-2 text-red-600 text-xs font-bold font-mono tracking-widest mb-2.5">
+                  <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-[10px]">01</span>
                   CAPTURE
                 </div>
                 <h3 className="text-sm font-bold text-[#0F172A] mb-1.5">Capture Decline</h3>
@@ -842,52 +848,49 @@ export default function LandingPage({
                   Stripe or Paddle registers a card decline. Churnfix captures the billing webhook in real time.
                 </p>
               </div>
-              <div className="bg-slate-100 text-[9px] font-mono font-bold text-[#475569] px-2 py-0.5 rounded-full mt-4 w-fit">
+              <div className="bg-white border border-red-200 shadow-sm text-[10px] font-mono font-bold text-red-600 px-2.5 py-1 rounded-full mt-4 w-fit">
                 invoice.payment_failed
               </div>
             </div>
 
             {/* Step 2 */}
             <div 
-              className="bg-white border border-slate-200/60 p-5 rounded-[16px] flex flex-col justify-between hover:border-[#00E87A]/40 hover:shadow-[0_12px_30px_rgba(0,232,122,0.06)] hover:translate-y-[-2px] transition-all duration-300"
-              style={{
-                background: "radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.08), transparent 70%), #FFFFFF",
-              }}
+              className="bg-amber-50/40 p-6 rounded-[24px] flex flex-col justify-between border border-amber-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-amber-200 transition-all duration-300"
             >
               <div>
                 {/* Visual section */}
-                <div className="w-full h-40 rounded-xl bg-slate-50/50 border border-slate-100/80 flex items-center justify-center relative overflow-hidden mb-4">
-                  <div className="relative w-full h-full flex items-center justify-center">
+                <div className="w-full h-48 rounded-xl bg-white/50 border border-amber-100 flex items-center justify-center relative overflow-hidden mb-5">
+                  <div className="relative w-full h-full flex items-center justify-center scale-110">
                     {/* Node connection network mockup */}
-                    <div className="w-7 h-7 rounded-full bg-[#00E87A] shadow-[0_0_15px_rgba(0,232,122,0.4)] flex items-center justify-center z-10">
-                      <Bell className="text-black" size={12} />
+                    <div className="w-9 h-9 rounded-full bg-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.5)] flex items-center justify-center z-10">
+                      <Bell className="text-white" size={16} />
                     </div>
                     
                     {/* Dotted paths */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 120">
-                      <path d="M 100 60 Q 120 40, 140 30" stroke="#00E87A" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
-                      <path d="M 100 60 L 140 60" stroke="#00E87A" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
-                      <path d="M 100 60 Q 120 80, 140 90" stroke="#00E87A" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.6" />
+                      <path d="M 100 60 Q 120 40, 140 30" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="4 4" fill="none" opacity="0.8" />
+                      <path d="M 100 60 L 140 60" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="4 4" fill="none" opacity="0.8" />
+                      <path d="M 100 60 Q 120 80, 140 90" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="4 4" fill="none" opacity="0.8" />
                     </svg>
                     
                     {/* Alert destinations */}
-                    <div className="absolute left-[125px] top-[16px] bg-white border border-slate-200/80 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm text-[8px] font-semibold text-slate-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#3ECF8E]" />
+                    <div className="absolute left-[135px] top-[14px] bg-white border border-amber-100 px-3 py-1 rounded-full flex items-center gap-2 shadow-sm text-[10px] font-bold text-slate-800">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
                       Slack
                     </div>
-                    <div className="absolute left-[132px] top-[48px] bg-white border border-slate-200/80 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm text-[8px] font-semibold text-slate-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#3ECF8E]" />
+                    <div className="absolute left-[142px] top-[46px] bg-white border border-amber-100 px-3 py-1 rounded-full flex items-center gap-2 shadow-sm text-[10px] font-bold text-slate-800">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
                       Discord
                     </div>
-                    <div className="absolute left-[125px] top-[80px] bg-white border border-slate-200/80 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm text-[8px] font-semibold text-slate-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#3ECF8E]" />
+                    <div className="absolute left-[135px] top-[78px] bg-white border border-amber-100 px-3 py-1 rounded-full flex items-center gap-2 shadow-sm text-[10px] font-bold text-slate-800">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
                       Email
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-[#0F9D76] text-xs font-bold font-mono tracking-widest mb-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#0F9D76]/10 flex items-center justify-center text-[10px]">02</span>
+                <div className="flex items-center gap-2 text-amber-600 text-xs font-bold font-mono tracking-widest mb-2.5">
+                  <span className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center text-[10px]">02</span>
                   ALERT
                 </div>
                 <h3 className="text-sm font-bold text-[#0F172A] mb-1.5">Instant Broadcast</h3>
@@ -895,44 +898,41 @@ export default function LandingPage({
                   A dedicated alert notifies you on Slack, Discord, and Email with customer details and reason.
                 </p>
               </div>
-              <div className="bg-slate-100 text-[9px] font-mono font-bold text-[#475569] px-2 py-0.5 rounded-full mt-4 w-fit">
+              <div className="bg-white border border-amber-200 shadow-sm text-[10px] font-mono font-bold text-amber-600 px-2.5 py-1 rounded-full mt-4 w-fit">
                 Payment Failed
               </div>
             </div>
 
             {/* Step 3 */}
             <div 
-              className="bg-white border border-slate-200/60 p-5 rounded-[16px] flex flex-col justify-between hover:border-[#00E87A]/40 hover:shadow-[0_12px_30px_rgba(0,232,122,0.06)] hover:translate-y-[-2px] transition-all duration-300"
-              style={{
-                background: "radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.08), transparent 70%), #FFFFFF",
-              }}
+              className="bg-blue-50/40 p-6 rounded-[24px] flex flex-col justify-between border border-blue-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-blue-200 transition-all duration-300"
             >
               <div>
                 {/* Visual section */}
-                <div className="w-full h-40 rounded-xl bg-slate-50/50 border border-slate-100/80 flex items-center justify-center relative overflow-hidden mb-4">
+                <div className="w-full h-48 rounded-xl bg-white/50 border border-blue-100 flex items-center justify-center relative overflow-hidden mb-5">
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Email overlay mockup */}
-                    <div className="w-[85%] h-[80%] bg-white border border-slate-200/80 rounded-lg shadow-sm p-3 flex flex-col justify-between">
-                      <div className="flex flex-col gap-1.5">
-                        <div className="flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
-                          <Mail size={10} className="text-[#00E87A]" />
-                          <span className="text-[8px] font-bold text-slate-700">Recovery Email</span>
+                    <div className="w-[90%] h-[85%] bg-white border border-blue-100 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 border-b border-blue-50 pb-2">
+                          <Mail size={14} className="text-blue-500" />
+                          <span className="text-[11px] font-bold text-slate-800">Recovery Email</span>
                         </div>
-                        <div className="flex flex-col gap-1 mt-0.5">
-                          <div className="w-full h-1.5 bg-slate-100 rounded-full" />
-                          <div className="w-[90%] h-1.5 bg-slate-100 rounded-full" />
-                          <div className="w-[60%] h-1.5 bg-slate-100 rounded-full" />
+                        <div className="flex flex-col gap-1.5 mt-1">
+                          <div className="w-full h-2 bg-slate-100 rounded-full" />
+                          <div className="w-[90%] h-2 bg-slate-100 rounded-full" />
+                          <div className="w-[60%] h-2 bg-slate-100 rounded-full" />
                         </div>
                       </div>
-                      <div className="w-full bg-[#00E87A] text-black font-extrabold text-[8px] py-1 rounded text-center shadow-sm">
+                      <div className="w-full bg-blue-500 text-white font-bold text-[11px] py-1.5 rounded-md text-center shadow-sm">
                         Update Card
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-[#0F9D76] text-xs font-bold font-mono tracking-widest mb-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#0F9D76]/10 flex items-center justify-center text-[10px]">03</span>
+                <div className="flex items-center gap-2 text-blue-600 text-xs font-bold font-mono tracking-widest mb-2.5">
+                  <span className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-[10px]">03</span>
                   DUNNING
                 </div>
                 <h3 className="text-sm font-bold text-[#0F172A] mb-1.5">Auto-Dunning</h3>
@@ -940,41 +940,38 @@ export default function LandingPage({
                   An automated email sequence or checkout recovery link is sent to the customer.
                 </p>
               </div>
-              <div className="bg-slate-100 text-[9px] font-mono font-bold text-[#475569] px-2 py-0.5 rounded-full mt-4 w-fit">
+              <div className="bg-white border border-blue-200 shadow-sm text-[10px] font-mono font-bold text-blue-600 px-2.5 py-1 rounded-full mt-4 w-fit">
                 dunning_sequence_executed
               </div>
             </div>
 
             {/* Step 4 */}
             <div 
-              className="bg-white border border-slate-200/60 p-5 rounded-[16px] flex flex-col justify-between hover:border-[#00E87A]/40 hover:shadow-[0_12px_30px_rgba(0,232,122,0.06)] hover:translate-y-[-2px] transition-all duration-300"
-              style={{
-                background: "radial-gradient(circle at 50% 25%, rgba(16, 185, 129, 0.08), transparent 70%), #FFFFFF",
-              }}
+              className="bg-emerald-50/40 p-6 rounded-[24px] flex flex-col justify-between border border-emerald-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.02),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1 hover:border-emerald-200 transition-all duration-300"
             >
               <div>
                 {/* Visual section */}
-                <div className="w-full h-40 rounded-xl bg-slate-50/50 border border-slate-100/80 flex items-center justify-center relative overflow-hidden mb-4">
+                <div className="w-full h-48 rounded-xl bg-white/50 border border-emerald-100 flex items-center justify-center relative overflow-hidden mb-5">
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Success metrics mockup */}
-                    <div className="w-[85%] h-[80%] bg-white border border-slate-200/80 rounded-lg shadow-sm p-3 flex flex-col justify-between">
+                    <div className="w-[90%] h-[85%] bg-white border border-emerald-100 rounded-lg shadow-sm p-4 flex flex-col justify-between">
                       <div className="flex items-center justify-between">
-                        <span className="text-[8px] font-bold text-slate-400">Recovery Status</span>
-                        <span className="w-3.5 h-3.5 rounded-full bg-[#00E87A]/20 text-[#0F9D76] flex items-center justify-center text-[8px] font-bold font-mono">✓</span>
+                        <span className="text-[11px] font-bold text-slate-500">Recovery Status</span>
+                        <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-[11px] font-bold font-mono">✓</span>
                       </div>
                       
-                      <div className="my-0.5 text-left">
-                        <div className="text-[8px] text-slate-400 font-semibold">Recovered Revenue</div>
-                        <div className="text-[15px] font-black text-[#0F9D76] tracking-tight font-display">+$19.00</div>
+                      <div className="my-1 text-left">
+                        <div className="text-[10px] text-slate-500 font-bold mb-0.5 uppercase tracking-wide">Recovered Revenue</div>
+                        <div className="text-xl font-black text-emerald-600 tracking-tight font-display">+$19.00</div>
                       </div>
                       
-                      <div className="h-5 w-full">
+                      <div className="h-6 w-full mt-1">
                         <svg className="w-full h-full" viewBox="0 0 120 30">
-                          <path d="M 10 25 Q 35 15, 60 20 T 110 5" fill="none" stroke="#00E87A" strokeWidth="2" strokeLinecap="round" />
-                          <path d="M 10 25 Q 35 15, 60 20 T 110 5 L 110 30 L 10 30 Z" fill="url(#restoredGrad)" opacity="0.15" />
+                          <path d="M 10 25 Q 35 15, 60 20 T 110 5" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" />
+                          <path d="M 10 25 Q 35 15, 60 20 T 110 5 L 110 30 L 10 30 Z" fill="url(#restoredGrad)" opacity="0.2" />
                           <defs>
                             <linearGradient id="restoredGrad" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stopColor="#00E87A" />
+                              <stop offset="0%" stopColor="#059669" />
                               <stop offset="100%" stopColor="#FFFFFF" />
                             </linearGradient>
                           </defs>
@@ -984,8 +981,8 @@ export default function LandingPage({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-[#0F9D76] text-xs font-bold font-mono tracking-widest mb-2.5">
-                  <span className="w-5 h-5 rounded-full bg-[#0F9D76]/10 flex items-center justify-center text-[10px]">04</span>
+                <div className="flex items-center gap-2 text-emerald-600 text-xs font-bold font-mono tracking-widest mb-2.5">
+                  <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-[10px]">04</span>
                   SUCCESS
                 </div>
                 <h3 className="text-sm font-bold text-[#0F172A] mb-1.5">Revenue Restored</h3>
@@ -993,9 +990,10 @@ export default function LandingPage({
                   The customer updates their billing information, the payment goes through, and revenue is back.
                 </p>
               </div>
-              <div className="bg-[#0F9D76]/10 border border-[#0F9D76]/20 text-[9px] font-mono font-bold text-[#0F9D76] px-2 py-0.5 rounded-full mt-4 w-fit">
+              <div className="bg-white border border-emerald-200 shadow-sm text-[10px] font-mono font-bold text-emerald-600 px-2.5 py-1 rounded-full mt-4 w-fit">
                 Payment Recovered
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -1215,8 +1213,8 @@ export default function LandingPage({
 
               <div className="flex flex-col gap-4">
                 <h4 className="font-bold text-[13px] text-[#0F172A]">Legal</h4>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Privacy Policy</a>
-                <a href="#" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Terms of Service</a>
+                <Link href="/privacy" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Privacy Policy</Link>
+                <Link href="/terms" className="text-[13px] text-[#64748B] hover:text-[#10B981] transition-colors no-underline">Terms of Service</Link>
               </div>
               
               {/* Empty column for layout balance */}
