@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { db } from "./db";
-import { dash } from "@better-auth/infra";
+
 
 export const auth = betterAuth({
   database: prismaAdapter(db, {
@@ -24,7 +24,4 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     },
   },
-  plugins: [
-    dash()
-  ]
 });
